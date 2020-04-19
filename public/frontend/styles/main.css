@@ -469,4 +469,43 @@ header .btn-get-started:hover {
   background-color: #1A3A84;
   color: #FFF;
 }
+
+@media (min-width: 992px) {
+  .login-container {
+    background: -webkit-gradient(linear, left top, right top, color-stop(60%, #fff), color-stop(40%, #E3E3E3));
+    background: linear-gradient(90deg, #fff 60%, #E3E3E3 40%);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.page-login {
+  height: 100vh;
+}
+
+.page-login .btn-login {
+  background-color: #FF9353;
+  color: #fff;
+}
+
+.page-login .btn-login:hover {
+  color: fff;
+}
+
+.page-login .section-left h1 {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 50px;
+  text-align: left;
+  color: #071c4d;
+}
+
+.page-login .section-right a {
+  font-family: Assistant;
+  font-weight: 300;
+  text-decoration: underline;
+  font-size: 19px;
+  text-align: left;
+  color: #aba6a6;
+}
 /*# sourceMappingURL=main.css.map */
