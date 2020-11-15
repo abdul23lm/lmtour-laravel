@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title')
+LM Tour and Travel | Detail
+@endsection
 @section('name', 'Detail Travel')
 
 @section('content')
@@ -101,7 +104,7 @@
                             </tr>
                             <tr>
                                 <th width="50%">Price</th>
-                                <td width="50%" class="text-right">${{ $item->price }},00 / person</td>
+                                <td width="50%" class="text-right">{{ $item->price }},00 IDR / person</td>
                             </tr>
                         </table>
                     </div>

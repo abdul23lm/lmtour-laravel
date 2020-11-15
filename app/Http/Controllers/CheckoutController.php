@@ -58,8 +58,8 @@ class CheckoutController extends Controller
             ->findOrFail($item->transactions_id);
 
         if ($item->is_visa) {
-            $transaction->transaction_total -= 190;
-            $transaction->additional_visa -= 190;
+            $transaction->transaction_total -= 950000;
+            $transaction->additional_visa -= 950000;
         }
 
         $transaction->transaction_total -= $transaction->travel_package->price;
@@ -86,8 +86,8 @@ class CheckoutController extends Controller
         $transaction = Transaction::with(['travel_package'])->find($id);
 
         if ($request->is_visa) {
-            $transaction->transaction_total += 190;
-            $transaction->additional_visa += 190;
+            $transaction->transaction_total += 950000;
+            $transaction->additional_visa += 950000;
         }
 
         $transaction->transaction_total += $transaction->travel_package->price;

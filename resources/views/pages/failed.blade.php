@@ -1,5 +1,8 @@
 @extends('layouts.checkout')
 
+@section('title')
+LM Tour and Travel |Failed
+@endsection
 @section('name', 'Checkout Success')
 
 @section('content')

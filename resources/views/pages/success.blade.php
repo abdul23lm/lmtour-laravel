@@ -1,5 +1,9 @@
 @extends('layouts.checkout')
 
+@section('title')
+LM Tour and Travel | Success
+@endsection
+
 @section('name', 'Checkout Success')
 
 @section('content')

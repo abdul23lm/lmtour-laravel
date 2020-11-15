@@ -1,5 +1,9 @@
 @extends('layouts.checkout')
 
+@section('title')
+LM Tour and Travel | Checkout
+@endsection
+
 @section('name', 'Checkout')
 
 @section('content')
@@ -134,17 +138,17 @@
                             </tr>
                             <tr>
                                 <th width="50%">Trip Price</th>
-                                <td width="50%" class="text-right">$ {{ $item->travel_package->price }} / person</td>
+                                <td width="50%" class="text-right">{{ $item->travel_package->price }} IDR / person</td>
                             </tr>
                             <tr>
                                 <th width="50%">Sub Total</th>
-                                <td width="50%" class="text-right">$ {{ $item->transaction_total }} ,00</td>
+                                <td width="50%" class="text-right">{{ $item->transaction_total }},00 IDR</td>
                             </tr>
                             <tr>
                                 <th width="50%">Total (+Unique)</th>
                                 <td width="50%" class="text-right">
                                     <span class="text-blue">
-                                        ${{ $item->transaction_total }},
+                                        {{ $item->transaction_total }} IDR,
                                     </span>
                                     <span class="text-orange">
                                         {{ mt_rand(0,99) }}
