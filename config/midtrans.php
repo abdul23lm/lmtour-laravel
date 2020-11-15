@@ -8,4 +8,4 @@ return [
 ];
 
 
-// config('midtrans.serverkey')
+config('midtrans.serverkey');

@@ -1,5 +1,10 @@
 @extends('layouts.login')
 
+@section('title')
+LM Tour and Travel | Login
+@endsection
+
+
 @section('content')
 <main class="login-container">
     <div class="container">
@@ -61,6 +66,10 @@
                             <a href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}</a>
                             </p>
+                            <p class="text-center mt-4">
+                                <a href="{{ route('register') }}">
+                                    {{ __('Create an Account?') }}</a>
+                                </p>
                              @endif
                         </form>
                     </div>

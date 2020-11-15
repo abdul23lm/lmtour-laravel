@@ -36,7 +36,6 @@
                         <a href="{{route('gallery.edit', $item->id)}}" class="btn btn-info">
                             <i class="fa fa-pencil-alt"></i>
                         </a>
-
                         <form action="{{route('gallery.destroy', $item->id)}}" method="POST" class="d-inline">
                         @csrf
                             @method('delete')

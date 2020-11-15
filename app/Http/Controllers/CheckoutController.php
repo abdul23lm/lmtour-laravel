@@ -20,9 +20,9 @@ class CheckoutController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $item = Transaction::with(['details','travel_package','user'])->findOrFail($id);
+        $item = Transaction::with(['details', 'travel_package', 'user'])->findOrFail($id);
 
-        return view('pages.checkout',[
+        return view('pages.checkout', [
             'item' => $item
         ]);
     }
@@ -54,11 +54,10 @@ class CheckoutController extends Controller
     {
         $item = TransactionDetail::findorFail($detail_id);
 
-        $transaction = Transaction::with(['details','travel_package'])
+        $transaction = Transaction::with(['details', 'travel_package'])
             ->findOrFail($item->transactions_id);
 
-        if($item->is_visa)
-        {
+        if ($item->is_visa) {
             $transaction->transaction_total -= 190;
             $transaction->additional_visa -= 190;
         }
@@ -86,8 +85,7 @@ class CheckoutController extends Controller
 
         $transaction = Transaction::with(['travel_package'])->find($id);
 
-        if($request->is_visa)
-        {
+        if ($request->is_visa) {
             $transaction->transaction_total += 190;
             $transaction->additional_visa += 190;
         }
@@ -101,8 +99,10 @@ class CheckoutController extends Controller
 
     public function success(Request $request, $id)
     {
-        $transaction = Transaction::with(['details','travel_package.galleries',
-        'user'])->findOrFail($id);
+        $transaction = Transaction::with([
+            'details', 'travel_package.galleries',
+            'user'
+        ])->findOrFail($id);
         $transaction->transaction_status = 'PENDING';
 
         $transaction->save();
@@ -126,7 +126,7 @@ class CheckoutController extends Controller
                 'first_name' => $transaction->user->name,
                 'email' => $transaction->user->email,
             ],
-            'enabled_payments' => ['goasasy'],
+            'enabled_payments' => ['gopay'],
             'vtweb' => [],
         ];
 
@@ -136,10 +136,9 @@ class CheckoutController extends Controller
 
             // Redirect to Snap Payment Page
             header('Location: ' . $paymentUrl);
-          }
-          catch (Exception $e) {
+        } catch (Exception $e) {
             echo $e->getMessage();
-          }
+        }
         // return $transaction;
 
         // Send email to user

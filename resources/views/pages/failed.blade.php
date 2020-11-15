@@ -7,7 +7,7 @@
 
     <div class="section-success d-flex align-items-center">
         <di class="col text-center">
-        <img src="{{url('frontend/images/ic_succes.png')}}" alt="">
+        {{-- <img src="{{url('frontend/images/ic_succes.png')}}" alt=""> --}}
             <h1>Oops!</h1>
             <p>
                 Your transaction is failed <br> Please contact our representative if this problem occurs

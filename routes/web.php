@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,8 +43,8 @@ Route::get('/checkout/confirm/{detail_id}', 'CheckoutController@success')
 
 Route::prefix('admin')
     ->namespace('Admin')
-    ->middleware(['auth','admin'])
-    ->group(function(){
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
         Route::get('/', 'DashboardController@index')
             ->name('dashboard');
 
@@ -54,9 +55,8 @@ Route::prefix('admin')
 
 Auth::routes(['verify' => true]);
 
-// Mitrans
+// Midtrans
 Route::post('/midtrans/callback', 'MidtransController@notificationHandler');
 Route::get('/midtrans/finish', 'MidtransController@finishRedirect');
 Route::get('/midtrans/unfinish', 'MidtransController@unfinishRedirect');
 Route::get('/midtrans/error', 'MidtransController@errorRedirect');
-

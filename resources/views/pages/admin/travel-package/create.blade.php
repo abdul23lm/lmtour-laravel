@@ -40,8 +40,8 @@
                         <input type="text" class="form-control" name="featured_event" placeholder="Featured Event" value="{{old ('featured_event') }}">
                 </div>
                 <div class="form-group">
-                    <label for="language">language</label>
-                        <input type="text" class="form-control" name="language" placeholder="language" value="{{old ('language') }}">
+                    <label for="language">Language</label>
+                        <input type="text" class="form-control" name="language" placeholder="Language" value="{{old ('language') }}">
                 </div>
                 <div class="form-group">
                     <label for="foods">Foods</label>
