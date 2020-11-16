@@ -22,16 +22,16 @@ LM Tour and Travel
 <main>
     <section class="section-stats row justify-content-center" id="stats">
         <div class="col-3 col-md-2 stats-detail">
-            <h2>20K</h2>
+        <h2>{{$members}}</h2>
             <p>Members</p>
         </div>
         <div class="col-3 col-md-2 stats-detail">
-            <h2>12K</h2>
-            <p>Countries</p>
+        <h2>{{$packages}}</h2>
+            <p>Travel Packages</p>
         </div>
         <div class="col-3 col-md-2 stats-detail">
-            <h2>3K</h2>
-            <p>Hotels</p>
+        <h2>{{$countries}}</h2>
+            <p>Countries</p>
         </div>
         <div class="col-3 col-md-2 stats-detail">
             <h2>7</h2>
